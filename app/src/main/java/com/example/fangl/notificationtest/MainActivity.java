@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         manager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
         notification = new NotificationCompat.Builder(this)
                         .setContentTitle("Notification Title")
-                        .setContentText("Content Text")
+//                        .setContentText("Content Text")
+                        .setStyle(new android.support.v4.app.NotificationCompat.BigTextStyle().bigText("史诗大时代史诗大时代史诗大时代史诗大时代史诗大时代史诗大时代史诗大时代史诗大时代史诗大时代史诗大时代"))
                         .setWhen(System.currentTimeMillis())
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher))
@@ -38,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
                         .setVibrate(new long[]{0,1000,500,1000})
                         .setAutoCancel(true)
                         .setLights(Color.YELLOW,1000,1000)
-                        .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.bigpicture)))
+//                        .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.bigpicture)))
+                        .setPriority(NotificationCompat.PRIORITY_MAX)  // MIN 最低 LOW 较低 HIGH 较高 MAX最高 DEFAULT 默认
                         .build();
         sendNotice = (Button)findViewById(R.id.send_notice);
         sendNotice.setOnClickListener(new View.OnClickListener() {
